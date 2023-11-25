@@ -21,9 +21,9 @@ curl -X GET https://www.boredapi.com/api/activity | jq '.activity' | sudo espeak
 
 ---
 
-touch bored.sh
+touch demo_linux_curl-jq-espeak-bored-api.sh
 
-sudo nano -l bored.sh
+sudo nano -l demo_linux_curl-jq-espeak-bored-api.sh
 
 |	#!/bin/bash
 |	while true; do

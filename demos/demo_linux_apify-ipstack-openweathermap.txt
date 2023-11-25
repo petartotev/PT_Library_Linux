@@ -1,0 +1,22 @@
+=======================================================================================================================================================================================
+RUN A BASH SCRIPT (.SH) THAT USES CURL TO CALL IPIFY API TO GET IP, THEN IPSTACK API TO GET LATITUDE AND LONGITUDE, THEN OPENWEATHERMAP API TO GET CURRENT TEMPERATURE BY GEOLOCATION.
+=======================================================================================================================================================================================
+https://stackoverflow.com/questions/62186370/postman-returns-200-on-api-call-but-curl-command-returns-401
+https://stackoverflow.com/questions/49432735/converting-a-postman-request-to-curl
+https://www.freecodecamp.org/news/how-to-set-an-environment-variable-in-linux/
+https://www.hostinger.com/tutorials/bash-concatenate-strings
+https://stackoverflow.com/questions/67924922/how-to-use-a-variable-in-curl-command-header-section
+https://stackoverflow.com/questions/9733338/shell-script-remove-first-and-last-quote-from-a-variable
+
+sudo apt install curl
+sudo apt install jq
+sudo apt install espeak
+
+export APIKEY_IPSTACK=...
+export APIKEY_OPENWEATHERMAP=...
+
+touch demo_linux_ipify-ipstack-openweathermap.sh
+
+./demo_linux_ipify-ipstack-openweathermap.sh
+
+# Once the bash script gets executed, a green text will show the current temperature (in Celsius) in the city your current IP address is in!
