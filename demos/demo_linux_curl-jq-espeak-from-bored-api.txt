@@ -1,0 +1,38 @@
+=======================================================================================================================================================================================
+RUN A BASH SCRIPT (.SH) THAT USES CURL TO CALL BOREDAPI.COM, THEN USES JQ TO EXTRACT A FIELD FROM THE RESPONSE OBJECT, THEN READS IT OUT LOUD USING ESPEAK ON KEYPRESS "B"
+=======================================================================================================================================================================================
+https://stackoverflow.com/questions/24016046/shell-script-respond-to-keypress
+https://jqlang.github.io/jq/tutorial/
+https://stackoverflow.com/questions/25769979/making-a-curl-to-an-api-and-get-an-specific-field-from-the-json
+https://apipheny.io/free-api/
+
+sudo apt install curl
+sudo apt install jq
+sudo apt install espeak
+
+curl -X GET https://www.boredapi.com/api/activity
+=>	{"activity":"Learn how to fold a paper crane","type":"education","participants":1,"price":0.1,"link":"","key":"3136036","accessibility":0.05}
+
+curl -X GET https://www.boredapi.com/api/activity | jq '.activity'
+=>	"Learn how to fold a paper crane"
+
+curl -X GET https://www.boredapi.com/api/activity | jq '.activity' | sudo espeak
+=>	Read out loud the activity field of the response from the curl above
+
+---
+
+touch bored.sh
+
+sudo nano -l bored.sh
+
+|	#!/bin/bash
+|	while true; do
+|	read -rsn1 input
+|	if [ "$input" = "b" ]; then
+|		curl -X GET https://www.boredapi.com/api/activity | jq '.activity' | sudo espeak
+|	fi
+|	done
+
+./bored.sh
+
+# Whenever you press the B (B come from "bored") the API will be called (by curl), the activity will be extracted from response (by jq) and read out loud (by espeak)!
