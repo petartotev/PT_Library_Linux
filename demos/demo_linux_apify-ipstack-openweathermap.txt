@@ -7,6 +7,9 @@ https://www.freecodecamp.org/news/how-to-set-an-environment-variable-in-linux/
 https://www.hostinger.com/tutorials/bash-concatenate-strings
 https://stackoverflow.com/questions/67924922/how-to-use-a-variable-in-curl-command-header-section
 https://stackoverflow.com/questions/9733338/shell-script-remove-first-and-last-quote-from-a-variable
+https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux
+https://ipstack.com/documentation
+https://stackoverflow.com/questions/43291389/using-jq-to-assign-multiple-output-variables
 
 sudo apt install curl
 sudo apt install jq
